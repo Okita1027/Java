@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="c3p0-0.9.5.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Java高级/src/jdbc/lib/c3p0-0.9.5.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Java高级/src/jdbc/lib/commons-dbutils-1.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Java高级/src/jdbc/lib/druid-1.2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Java高级/src/jdbc/lib/mchange-commons-java-0.2.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Java高级/src/jdbc/lib/mysql-connector-java-8.0.28.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

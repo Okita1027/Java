@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @Description 冒泡排序
  * @Date 2022/11/23 16:02 星期三
  */
-public class BlobSort {
+public class BubbleSort {
     public static void main(String[] args) {
         Integer[] array = {8, 7, 4, 9, 1, 5, 6, 0, 3, 2};
         blobSort(array);

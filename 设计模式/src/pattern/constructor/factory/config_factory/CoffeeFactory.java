@@ -13,7 +13,7 @@ import java.util.Set;
  * @Author qzy
  * @Version V1.0
  * @ClassName CoffeeFactory
- * @Description 改进工厂类(简易版Spring IOC)
+ * @Description 改进工厂类(简易版Spring IOC) 简单工厂 + 配置文件
  * @Date 2022/6/18 18:20 星期六
  */
 public class CoffeeFactory {

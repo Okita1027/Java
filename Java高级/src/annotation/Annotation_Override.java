@@ -2,13 +2,13 @@ package annotation;
 
 /**
  * @author 秦智耘
- * @Date 2021/8/7 - 2021年8月7日13:15:46
+ * @Date 2021年8月7日13:15:46
  */
 public class Annotation_Override
 {
     public static void main(String[] args)
     {
-        new inter()
+        new Inter()
         {
             //重写inter接口中的hello方法
             @Override
@@ -20,7 +20,7 @@ public class Annotation_Override
     }
 }
 
-interface inter
+interface Inter
 {
     void hello();
 }

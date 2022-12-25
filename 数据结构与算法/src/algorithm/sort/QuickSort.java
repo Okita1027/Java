@@ -20,7 +20,7 @@ public class QuickSort {
         Arrays.stream(ints).forEach(System.out::println);
     }
 
-    public static boolean less( Comparable a, Comparable b) {
+    public static boolean less(Comparable a, Comparable b) {
         return a.compareTo(b) < 0;
     }
 
@@ -30,15 +30,13 @@ public class QuickSort {
         array[j] = temp;
     }
 
-    public static void quickSort(Comparable array[])
-    {
+    public static void quickSort(Comparable array[]) {
         int low = 0;
         int high = array.length - 1;
         quickSort(array, low, high);
     }
 
-    private static void quickSort(Comparable array[], int low, int high)
-    {
+    private static void quickSort(Comparable array[], int low, int high) {
         if (high <= low) {
             return;
         }

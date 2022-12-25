@@ -11,7 +11,7 @@ public abstract class Coffee {
     public abstract String getName();
 
     //加糖
-    public void addsugar() {
+    public void addSugar() {
         System.out.println("加糖");
     }
 

@@ -1,10 +1,8 @@
 package annotation;
 
-import java.awt.*;
-
 /**
  * @author 秦智耘
- * @Date 2021/8/7 - 2021年8月7日13:32:13
+ * @Date 2021年8月7日13:32:13
  */
 public class Annotation_SuppressWarning
 {

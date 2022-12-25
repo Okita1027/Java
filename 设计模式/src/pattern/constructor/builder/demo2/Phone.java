@@ -1,11 +1,11 @@
 package pattern.constructor.builder.demo2;
 
-
 /**
- * @version v1.0
+ * @Author: qzy
  * @ClassName: Phone
  * @Description: 手机类
- * @Author: 黑马程序员
+ *               当构造方法需要传入很多参数时，可以用这种方式
+ * @Date 2022年12月20日12:48:28
  */
 public class Phone {
 
@@ -42,7 +42,6 @@ public class Phone {
             this.cpu = cpu;
             return this;
         }
-
         public Builder screen(String screen) {
             this.screen = screen;
             return this;

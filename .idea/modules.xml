@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/JVM/JVM.iml" filepath="$PROJECT_DIR$/JVM/JVM.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaSE.iml" filepath="$PROJECT_DIR$/JavaSE.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java基础/Java基础.iml" filepath="$PROJECT_DIR$/Java基础/Java基础.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java高级/Java高级.iml" filepath="$PROJECT_DIR$/Java高级/Java高级.iml" />

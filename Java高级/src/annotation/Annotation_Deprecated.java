@@ -2,7 +2,7 @@ package annotation;
 
 /**
  * @author 秦智耘
- * @Date 2021/8/7 - 2021年8月7日13:24:58
+ * @Date 2021年8月7日13:24:58
  */
 public class Annotation_Deprecated
 {

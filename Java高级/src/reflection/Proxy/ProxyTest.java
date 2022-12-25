@@ -55,6 +55,7 @@ class MyInvocationHandler implements InvocationHandler {
     //将被代理类要执行的方法a的功能声明在invoke()中
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("执行动态代理增强原有方法！");
         //method即为代理类对象调用的方法，此方法也就作为了被代理类对象要调用的方法
         //obj:被代理类的对象
         Object returnValue = method.invoke(obj, args);

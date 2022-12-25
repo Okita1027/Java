@@ -19,7 +19,7 @@ public class CitationTest02 {
         //创建对象输出流对象
         ObjectOutputStream oos =
                 new ObjectOutputStream(new FileOutputStream("F:/Java/b.txt"));
-        //将c1对象写出到文件中
+        //将c1对象写入到文件中
         oos.writeObject(c1);
         oos.close();
 

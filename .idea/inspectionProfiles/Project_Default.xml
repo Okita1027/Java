@@ -37,5 +37,8 @@
       <option name="IGNORE_POINT_TO_ITSELF" value="false" />
       <option name="myAdditionalJavadocTags" value="time,Title,Date,Author,Version,ClassName,Description,date" />
     </inspection_tool>
+    <inspection_tool class="StringOperationCanBeSimplified" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoreStringConstructor" value="true" />
+    </inspection_tool>
   </profile>
 </component>

@@ -7,7 +7,7 @@ package algorithm.easy;
  * 例如：6 = 1 + 2 + 3
  * @Date 2023/1/20 21:26 星期五
  */
-public class CompleteNum {
+public class PerfectNum {
     public static void main(String[] args) {
         //找出1000以内的完数
         for (int num = 1; num < 1000; num++) {

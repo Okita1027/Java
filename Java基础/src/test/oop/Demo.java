@@ -14,10 +14,24 @@ import java.util.*;
 public class Demo {
 
     @Test
-    void testRightStart4To7() {
-        final ArrayList<Integer> list = new ArrayList<>();
-        final ListIterator<Integer> iterator = list.listIterator();
+    void test01() {
+        final Scanner scanner = new Scanner(System.in);
+        int num;
+        while (true) {
+            try {
+                num = scanner.nextInt();
+                while (num < 0 || num > 10) {
+                    System.out.println("数据不合法！");
+                    num = scanner.nextInt();
+                }
+                System.out.println("数据合法：" + num);
+                break;
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                e.printStackTrace();
+            }
 
+        }
     }
 
     @Test

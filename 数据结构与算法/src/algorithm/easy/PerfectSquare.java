@@ -9,12 +9,13 @@ package algorithm.easy;
  */
 public class PerfectSquare {
     public static void main(String[] args) {
-        for (int num = 1; num < 100000; num++) {
-            if (Math.sqrt(num + 100) % num == 0) {
-                if (Math.sqrt(num + 268) % num == 0) {
-                    System.out.println("完全平方数：" + num);
-                }
+        for (int num = 1; num < 10000; num++) {
+            int sqrt1 = (int) Math.sqrt(num + 100);
+            int sqrt2 = (int) Math.sqrt(num + 100 + 168);
+            if ((sqrt1 * sqrt1 == num + 100) && (sqrt2 * sqrt2 == num + 100 + 168)) {
+                System.out.print(num + "\t");
             }
         }
     }
+
 }

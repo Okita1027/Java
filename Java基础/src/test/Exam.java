@@ -1,5 +1,7 @@
 package test;
 
+import org.junit.jupiter.api.Test;
+
 /**
  * @Author qzy
  * @ClassName Exam
@@ -7,6 +9,21 @@ package test;
  * @Date 2023/2/4 22:09 星期六
  */
 public class Exam {
+
+    class Out {
+        private int a;
+
+        void fun() {
+            final Inner inner = new Inner();
+            System.out.println(inner.b);
+        }
+
+        class Inner {
+            private int b;
+            public int c;
+        }
+    }
+
     public static void main(String[] args) {
         /*A a = new B();
         System.out.println(a.a);

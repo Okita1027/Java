@@ -16,9 +16,9 @@ public class Factorial {
         }
         System.out.println(sum);*/
 
-        //求1！+2！...20！
+        //求1！+2！...10！
         int sum = 0;
-        for (int i = 1; i <= 20; i++) {
+        for (int i = 1; i <= 10; i++) {
             int temp = 1;
             for (int j = 2; j <= i; j++) {
                 temp *= j;

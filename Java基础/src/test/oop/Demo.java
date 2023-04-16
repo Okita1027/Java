@@ -2,7 +2,11 @@ package test.oop;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -12,6 +16,152 @@ import java.util.*;
  * @Date 2023/1/29 22:04 星期日
  */
 public class Demo {
+    class A {
+        int a = 10;
+        private int b;
+
+        public A() {
+            b = 15;
+        }
+
+        public void show() {
+            System.out.println("AAA");
+        }
+
+        void fun() {
+            System.out.println("Father-FUN()");
+        }
+    }
+
+    class B extends A {
+        int a = 20;
+
+        public B() {
+            a = 21;
+        }
+
+        @Override
+        public void show() {
+            System.out.println("BBB");
+        }
+
+        private int c = 1;
+        class C {
+            void fun() {
+                System.out.println(c);
+            }
+        }
+
+        int fun(int a) {
+            System.out.println("SON-FUN()");
+            System.out.println(a);
+            return a;
+        }
+
+        void fun(float a) {
+            System.out.println("SON-FUN()");
+            System.out.println(a);
+        }
+
+    }
+
+    @Test
+    void test() throws IOException {
+        /*System.out.println(-10 % 3);
+        System.out.println(-10 % -3);*/
+        /*int a = 1;
+        int b = 2;
+        int c = 3;
+        int d = a / b;
+        int e = a / c;
+        System.out.println(d);
+        System.out.println(e);
+        float f = (float) b / c;
+        int g = (int) f;
+        System.out.println(f);
+        System.out.println(g);*/
+        /*int one = 1;
+        char two = '2';
+        System.out.println((char) one);
+        System.out.println((int) two);
+        System.out.println((int) (one + two));
+        System.out.println((char) (one + two));*/
+        /*String test = "This is a test";
+        String[] tokens = test.split("\\s");
+        System.out.println(Arrays.toString(tokens));*/
+        /*float f1 = 3.5555f;
+        float f2 = 3.3335f;
+        System.out.printf("%.0f,%.0f", f1, f2);*/
+        /*double a[] = { 8.2, 3.8, 15.1, 9.0 };
+        double max, min;
+        max = min = a[0];
+        for (int i = 1; i < a.length; i++) {
+            if (max < a[i]) {
+                max = a[i];
+            } else if (min > a[i]) {
+                min = a[i];
+            }
+        }
+        System.out.println(max);
+        System.out.println(min);*/
+
+    }
+
+
+    @Test
+    void testException() {
+        int sel = 0;
+        try {
+            if (sel == 0) {
+                System.out.println("no Exception ");
+                return;
+            } else if (sel == 1) {
+                int i = 0;
+                int j = 4 / i;
+            }
+        } catch (ArithmeticException e) {
+            System.out.println("Catch ");
+        } catch (Exception e) {
+            System.out.println("Will not be executed");
+        } finally {
+            System.out.println("finally");
+        }
+    }
+
+    @Test
+    void testTransferLetter() {
+        String s, s1 = "";
+        char c;
+        s = "wELCOME";
+        for (int i = 0; i < s.length(); i++) {
+            c = s.charAt(i);
+            if (c >= 'a' && c <= 'z') {
+                s1 = s1 + Character.toUpperCase(c);
+            } else {
+                s1 = s1 + Character.toLowerCase(c);
+            }
+        }
+        System.out.println(s1);
+    }
+
+    @Test
+    void testSwitch() {
+        final Scanner scanner = new Scanner(System.in);
+        int score = scanner.nextInt();
+        switch (score / 10) {
+            case 10:
+            case 9:
+                System.out.println("A");
+                break;
+            case 8:
+            case 7:
+            case 6:
+                System.out.println("B");
+                break;
+            default:
+                System.out.println("C");
+        }
+    }
 
     @Test
     void test01() {

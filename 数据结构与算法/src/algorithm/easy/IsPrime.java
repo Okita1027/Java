@@ -9,8 +9,15 @@ package algorithm.easy;
 public class IsPrime {
     public static void main(String[] args) {
         int count = 0;
-        for (int i = 2; i < 50; i++) {
-            if (isPrime(i)) {
+        for (int i = 101; i < 200; i += 2) {
+            boolean flag = true;
+            for (int j = 2; j <= Math.sqrt(i); j++) {
+                if (i % j == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
                 System.out.print(i + "\t");
                 if (++count % 5 == 0) {
                     System.out.println();
@@ -18,14 +25,4 @@ public class IsPrime {
             }
         }
     }
-
-    private static boolean isPrime(int num) {
-        for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
 }

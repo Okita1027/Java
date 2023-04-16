@@ -12,6 +12,15 @@ import java.util.Scanner;
 public class PrimeFactor {
     public static void main(String[] args) {
 
+        /*Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        for (int i = 2; i <= num; i++) {
+            while (num % i == 0) {
+                num /= i;
+                System.out.println(i);
+            }
+        }*/
+
         int num = new Scanner(System.in).nextInt();
         int temp = num;
         ArrayList<Integer> list = new ArrayList<>();

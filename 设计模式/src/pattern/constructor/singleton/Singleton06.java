@@ -31,8 +31,7 @@ class Wife2
     //线程同步实现多线程安全
     public static synchronized Wife2 getWife(String name)
     {
-        if (wife2 == null)
-        {
+        if (wife2 == null) {
             //只需要在写操作前实现线程同步，提高效率
             synchronized (Wife2.class) {
                 //抢到锁之后再次判断是否为空

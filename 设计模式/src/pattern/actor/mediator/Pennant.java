@@ -13,8 +13,6 @@ public class Pennant extends Person {
         super(name, mediator);
     }
 
-
-
     @Override
     protected void contact(String message) {
         mediator.contact(this, message);

@@ -11,6 +11,6 @@ public class TV {
         System.out.println("开电视");
     }
     public void off() {
-        System.out.println("关灯");
+        System.out.println("关电视");
     }
 }

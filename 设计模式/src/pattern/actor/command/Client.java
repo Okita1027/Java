@@ -1,5 +1,7 @@
 package pattern.actor.command;
 
+import javax.sound.midi.Receiver;
+
 /**
  * @Author qzy
  * @ClassName Client
@@ -18,6 +20,5 @@ public class Client {
         Waitress waitress = new Waitress();
         waitress.setCommands(orderCommand);
         waitress.orderUp();
-
     }
 }

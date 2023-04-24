@@ -12,6 +12,7 @@ public class Egg extends Garish{
         super(fastFood, 1, "（煎）鸡蛋");
     }
 
+    @Override
     public double cost() {
         return getPrice() + getFastFood().cost();
     }

@@ -6,7 +6,8 @@ import java.util.List;
 /**
  * @Author qzy
  * @ClassName Home
- * @Description TODO(一句话描述该类功能)
+ * @Description 对象结构（Object Structure）角色：定义当中所提到的对象结构，对象结构是一个抽象表述，
+ * 具体点可以理解为一个具有容器性质或者复合对象特性的类，它会含有一组元素（ Element ），并且可以迭代这些元素，供访问者访问。
  * @Date 2022/12/24 19:25 星期六
  */
 public class Home {

@@ -1,5 +1,8 @@
 package pattern.structor.adapter.object_adapter;
 
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
 /**
  * @Author qzy
  * @ClassName TypeCAdapterUSB

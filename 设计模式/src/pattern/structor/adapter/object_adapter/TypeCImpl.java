@@ -11,7 +11,7 @@ public class TypeCImpl implements TypeC {
     @Override
     public String readTypeC() {
         System.out.println("TypeCImpl -> read()");
-        return "从手机的TypeC接口读取了信息：HelloWorld!" + message;
+        return "从手机的TypeC接口读取了信息：" + message + "!";
     }
 
     @Override

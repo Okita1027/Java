@@ -11,7 +11,7 @@ public class USBImpl implements USB {
     @Override
     public String readUSB() {
         System.out.println("USBImpl -> read()");
-        return "从U盘中读取了信息：HelloWorld!" + message;
+        return "从U盘中读取了信息：" + message + "!";
     }
 
     @Override

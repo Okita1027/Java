@@ -11,7 +11,7 @@ public class PrototypeTest {
     public static void main(String[] args) throws CloneNotSupportedException {
         RealizeType r1 = new RealizeType();
         RealizeType r2 = r1.clone();
-        System.out.println("对象r1和r2是否为一个对象？" + (r1 == r2));
+        System.out.println("对象r1和r2是否为一个对象？" + (r1 == r2)); //false
         r1.setName("张三");
         r2.setName("李四");
         r1.show();

@@ -18,10 +18,12 @@ public class Square implements Quadrilateral {
         this.side = side;
     }
 
+    @Override
     public double getLength() {
         return side;
     }
 
+    @Override
     public double getWidth() {
         return side;
     }

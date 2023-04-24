@@ -8,7 +8,9 @@ package pattern.actor.template;
  */
 public class Client {
     public static void main(String[] args) {
-        CookBaoCai cookBaoCai = new CookBaoCai();
+        CookTemplate cookBaoCai = new CookBaoCai();
         cookBaoCai.cook();
+        CookTemplate cookBaiCai = new CookBaiCai();
+        cookBaiCai.cook();
     }
 }

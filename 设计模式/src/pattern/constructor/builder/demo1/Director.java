@@ -17,6 +17,6 @@ public class Director {
     public Car construct() {
         builder.buildFrame();
         builder.buildSeat();
-        return builder.car;
+        return builder.createCar();
     }
 }

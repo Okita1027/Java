@@ -15,14 +15,14 @@ public class RunTimeDemo {
         Runtime runtime = Runtime.getRuntime();
         Process exec = runtime.exec("ipconfig");
         InputStream inputStream = exec.getInputStream();
-//        byte[] bytes = new byte[1024 * 1024 * 100];
-//        int len = inputStream.read(bytes);
-//        //控制台默认使用GBK编码
-//        System.out.println(new String(bytes, 0, len, "GBK"));
-        int len;
+        byte[] bytes = new byte[1024 * 1024 * 100];
+        int len = inputStream.read(bytes);
+        //控制台默认使用GBK编码
+        System.out.println(new String(bytes, 0, len, "GBK"));
+        /*int len;
         byte[] bytes = new byte[1024];
         while ((len = inputStream.read(bytes)) != -1) {
             System.out.println(new String(bytes, 0, len, "GBK"));
-        }
+        }*/
     }
 }

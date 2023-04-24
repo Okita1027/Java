@@ -19,10 +19,12 @@ public class Rectangle implements Quadrilateral {
         this.width = width;
     }
 
+    @Override
     public double getLength() {
         return length;
     }
 
+    @Override
     public double getWidth() {
         return width;
     }

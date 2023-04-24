@@ -3,7 +3,7 @@ package pattern.actor.memorandum.white_box;
 /**
  * @Author qzy
  * @ClassName RoleStateMemento
- * @Description 备份
+ * @Description 备忘录（Memento）角色：负责存储发起人的内部状态，在需要的时候提供这些内部状态给发起人。
  * @Date 2022/12/25 14:40 星期日
  */
 public class RoleStateMemento {

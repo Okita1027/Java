@@ -9,8 +9,15 @@ package pattern.structor.decorator;
 public abstract class FastFood {
     private double price;
     private String description;
-
-    //计算价格
+    public FastFood() {
+    }
+    public FastFood(double price, String description) {
+        this.price = price;
+        this.description = description;
+    }
+    /**
+     * 计算价格
+     */
     public abstract double cost();
 
     public double getPrice() {
@@ -29,11 +36,4 @@ public abstract class FastFood {
         this.description = description;
     }
 
-    public FastFood(double price, String description) {
-        this.price = price;
-        this.description = description;
-    }
-
-    public FastFood() {
-    }
 }

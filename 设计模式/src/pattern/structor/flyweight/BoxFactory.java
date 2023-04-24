@@ -5,8 +5,9 @@ import java.util.HashMap;
 /**
  * @Author qzy
  * @ClassName BoxFactory
- * @Description 非享元（Unsharable Flyweight)角色 ：并不是所有的抽象享元类的子类都需要被共享，不
- * 能被共享的子类可设计为非共享具体享元类；当需要一个非共享具体享元类的对象时可以直接通过实例化创建。
+ * @Description 享元工厂（Flyweight Factory）角色 ：负责创建和管理享元角色。当客户对象请求一个享元
+ * 对象时，享元工厂检査系统中是否存在符合要求的享元对象，如果存在则提供给客户；如果不存在
+ * 的话，则创建一个新的享元对象。
  * @Date 2022/12/21 17:32 星期三
  */
 public class BoxFactory {

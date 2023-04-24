@@ -11,6 +11,7 @@ public class FriedRice extends FastFood{
         super(10, "（黄金）炒饭");
     }
 
+    @Override
     public double cost() {
         return getPrice();
     }

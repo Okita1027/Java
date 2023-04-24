@@ -1,7 +1,5 @@
 package pattern.actor.memorandum.black_box;
 
-import pattern.actor.memorandum.white_box.RoleStateMemento;
-
 /**
  * @Author qzy
  * @ClassName GameRole

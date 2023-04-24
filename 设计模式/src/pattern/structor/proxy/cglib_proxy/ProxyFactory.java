@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
  */
 public class ProxyFactory implements MethodInterceptor {
 
-    private JobHelper target = new JobHelper();
+    private final JobHelper target = new JobHelper();
 
     public JobHelper getProxy() {
         //创建Enhancer对象，类似于JDK动态代理的Proxy类，下一步就是设置几个参数

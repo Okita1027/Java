@@ -11,12 +11,15 @@ public class Client {
         GameRole role = new GameRole();
         System.out.println("role = " + role);
 
+        //存档工具
         RoleStateCaretaker caretaker = new RoleStateCaretaker();
+        //存档
         caretaker.setMemento(role.saveState());
 
         role.fight();
         System.out.println("role = " + role);
 
+        //读档
         role.recoverState(caretaker.getMemento());
         System.out.println("role = " + role);
     }

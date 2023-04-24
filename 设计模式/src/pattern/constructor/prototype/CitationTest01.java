@@ -17,7 +17,7 @@ public class CitationTest01 {
         Student stu2 = c2.getStudent();
         stu2.setName("李四");
 
-        System.out.println("stu和stu1是同一个对象？" + (stu2 == stu1));
+        System.out.println("stu和stu1是同一个对象？" + (stu2 == stu1)); //true
         c1.show();
         c2.show();
     }

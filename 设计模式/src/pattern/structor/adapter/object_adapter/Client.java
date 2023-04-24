@@ -17,6 +17,7 @@ public class Client {
 
         //使用适配器让手机能通过自身的（TypeC接口）读取U盘的（USB接口）的信息
         TypeCAdapterUSB adapter = new TypeCAdapterUSB(new USBImpl());
+        mobilePhone.writeTypeC(adapter, "Elden Ring");
         String data = mobilePhone.readTypeC(adapter);
         System.out.println("data = " + data);
     }

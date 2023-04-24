@@ -13,4 +13,11 @@ public class MobilePhone extends TypeCImpl {
         }
         return typeC.readTypeC();
     }
+
+    public void writeTypeC(TypeC typeC, String message) {
+        if (typeC == null) {
+            throw new NullPointerException("typeC can't be null!");
+        }
+        typeC.writeTypeC(message);
+    }
 }

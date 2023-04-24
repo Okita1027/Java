@@ -15,7 +15,7 @@ public class Singleton02 {
 class BoyFriend {
     private String name;
     private Integer age;
-    private static BoyFriend boyFriend = null;
+    private static BoyFriend boyFriend;
     private BoyFriend() {
 
     }

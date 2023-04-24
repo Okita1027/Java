@@ -9,11 +9,11 @@ package pattern.actor.visitor;
 public class Myself implements Person{
     @Override
     public void feed(Dog dog) {
-        System.out.println("Myself feed dog!");
+        System.out.println("Myself feed " + dog);
     }
 
     @Override
     public void feed(Cat cat) {
-        System.out.println("Myself feed cat!");
+        System.out.println("Myself feed " + cat);
     }
 }

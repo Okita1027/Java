@@ -12,6 +12,7 @@ public class HotDog extends Garish{
         super(fastFood, 2, "（烤）热狗");
     }
 
+    @Override
     public double cost() {
         return getPrice() + getFastFood().cost();
     }

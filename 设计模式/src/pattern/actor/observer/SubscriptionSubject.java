@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class SubscriptionSubject implements Subject{
 
-    private List<Observer> weXinUserList;
+    private final List<Observer> weXinUserList;
 
     public SubscriptionSubject() {
         weXinUserList = new ArrayList<>();

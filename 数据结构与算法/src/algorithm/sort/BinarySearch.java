@@ -1,5 +1,8 @@
 package algorithm.sort;
 
+import java.lang.annotation.Target;
+import java.util.Arrays;
+
 /**
  * @date 2022/6/7 10:33 星期二
  * 二分查找：前提条件是查找的数组是有序的
@@ -33,4 +36,53 @@ public class BinarySearch {
         //没找到返回-1
         return -1;
     }
+
+    /**
+     * 平衡版
+     */
+    public static int binarySearch(int[] array, int target) {
+        int left = 0;
+        int right = array.length;
+
+        while (left + 1 < right) {
+            int mid = (left + right) / 2;
+            if (target < array[mid]) {
+                right = mid;
+            } else {
+                left = mid;
+            }
+        }
+
+        if (target == array[left]) {
+            return target;
+        } else {
+            return -1;
+        }
+    }
+
+    /**
+     * 二分查找——LeftMost
+     * @param array 待查找的升序数组
+     * @param target 目标值
+     * @return >= target 的最靠左索引
+     */
+    public static int binarySearchIndex(int[] array, int target) {
+        int left = 0;
+        int right = array.length - 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (target <= array[mid]) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return left;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5, 6};
+        System.out.println(binarySearch(array, 3));
+    }
+
 }

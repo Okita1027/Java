@@ -20,7 +20,7 @@ public class ConstructorReference {
     //Supplier中的T get()
     @Test
     public void test1() {
-        Supplier<Worker> supplier1 = () -> new Worker("周君逸");
+        Supplier<Worker> supplier1 = () -> new Worker("黄凌烽");
         System.out.println(supplier1.get());
         System.out.println("===============");
         Supplier<Worker> supplier2 = Worker::new;

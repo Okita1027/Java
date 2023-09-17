@@ -17,6 +17,7 @@
         <jarDirectory url="file://$MODULE_DIR$/src/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="aopalliance-1.0" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="JUnit" level="project" />
   </component>
 </module>

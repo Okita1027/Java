@@ -1,4 +1,4 @@
-package newfeatures.JDK8.Lambda;
+package newfeatures.Lambda;
 
 /**
  * @time 2022/5/8 14:11 星期日

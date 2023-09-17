@@ -1,6 +1,6 @@
-package newfeatures.JDK8.StreamAPI;
+package newfeatures.StreamAPI;
 
-import newfeatures.JDK8.Lambda.Worker;
+import newfeatures.Lambda.Worker;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

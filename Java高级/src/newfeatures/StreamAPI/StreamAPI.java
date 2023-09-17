@@ -1,4 +1,4 @@
-package newfeatures.JDK8.StreamAPI;
+package newfeatures.StreamAPI;
 
 import org.junit.jupiter.api.Test;
 

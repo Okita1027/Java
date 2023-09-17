@@ -1,4 +1,4 @@
-package newfeatures.JDK8.Lambda;
+package newfeatures.Lambda;
 
 import org.junit.jupiter.api.Test;
 

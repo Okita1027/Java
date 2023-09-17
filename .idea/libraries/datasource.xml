@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="c3p0-0.9.5.5">
+  <library name="datasource">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/Java高级/src/jdbc/lib/c3p0-0.9.5.5.jar!/" />
       <root url="jar://$PROJECT_DIR$/Java高级/src/jdbc/lib/commons-dbutils-1.7.jar!/" />

@@ -1,4 +1,4 @@
-package newfeatures.JDK8.Lambda;
+package newfeatures.Lambda;
 
 import java.util.Random;
 

@@ -23,15 +23,19 @@ public class T206 {
     }
 
     public ListNode reverseList(ListNode head) {
-        ListNode prev = null;
-        ListNode curr = head;
-        while (curr != null) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+        ListNode previous = null;
+        ListNode current = head;
+        while (current != null) {
+            ListNode next = current.next;
+            //当前结点指向下一个结点
+            current.next = previous;
+            //上一个结点变为当前结点
+            previous = current;
+            //当前结点变为下一个结点
+            current = next;
         }
-        return prev;
+        //返回反转后的链表头
+        return previous;
     }
 }
 

@@ -56,14 +56,4 @@ public class T27 {
         return left;
     }
 
-
-    void fun() {
-        /*int slow, fast;
-        for (slow = fast = 0; fast < nums.length; fast++) {
-            if (nums[fast] != val) {
-                nums[slow++] = nums[fast];
-            }
-        }
-        return slow;*/
-    }
 }

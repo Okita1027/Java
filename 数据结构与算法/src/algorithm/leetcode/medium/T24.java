@@ -21,4 +21,25 @@ package algorithm.leetcode.medium;
  */
 public class T24 {
 
+    private static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+
+    public ListNode swapPairs(ListNode head) {
+        ListNode sentinel = new ListNode(-1, head);
+        ListNode temp = sentinel;
+        while (temp.next != null && temp.next.next != null) {
+            ListNode leftNode = temp.next;
+            ListNode rightNode = temp.next.next;
+            temp.next = rightNode;
+            leftNode.next = rightNode.next;
+            rightNode.next = leftNode;
+            temp = leftNode;
+        }
+        return sentinel.next;
+    }
 }

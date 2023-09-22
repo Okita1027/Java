@@ -37,7 +37,7 @@ public class T19 {
     }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        // 获得链表总结点的个数
+        /*// 获得链表总结点的个数
         int count = 0;
         ListNode temp = head;
         while (temp != null) {
@@ -54,6 +54,24 @@ public class T19 {
         }
         current.next = current.next.next;
 
-        return sentinel.next;
+        return sentinel.next;*/
+
+        /*
+            快慢指针法，先让fast移动n个位置，
+            再让slow和fast同时移动，直到fast为空
+            最后让slow指向下一个结点的下一个结点。
+         */
+        ListNode dummyNode = new ListNode(-1, head);
+        ListNode slowNode, fastNode;
+        slowNode = fastNode = dummyNode;
+        for (int i = 0; i < n; i++) {
+            fastNode = fastNode.next;
+        }
+        while (fastNode.next != null) {
+            slowNode = slowNode.next;
+            fastNode = fastNode.next;
+        }
+        slowNode.next = slowNode.next.next;
+        return dummyNode.next;
     }
 }

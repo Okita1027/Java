@@ -12,8 +12,8 @@ package algorithm.leetcode.easy;
  *  输入：nums = [3,1,2,10,1]
  *  输出：[3,4,6,16,17]
  */
-public class T1480 {
-    public int[] runningSum(int[] nums) {
+public class T1480_DynamicSumOfOneDimensionalArrays {
+    /*public int[] runningSum(int[] nums) {
         int[] array = new int[nums.length];
         array[0] = nums[0];
         int sum = array[0];
@@ -22,5 +22,13 @@ public class T1480 {
             array[i] = sum;
         }
         return array;
+    }*/
+
+    public int[] runningSum(int[] nums) {
+        //从数组的第二个元素开始，让其自增上一个元素的值
+        for (int i = 1; i < nums.length; i++) {
+            nums[i] += nums[i - 1];
+        }
+        return nums;
     }
 }

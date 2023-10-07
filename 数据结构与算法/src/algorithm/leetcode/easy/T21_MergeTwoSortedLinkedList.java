@@ -4,18 +4,15 @@ package algorithm.leetcode.easy;
  * @Date 2022/6/12 17:47 星期日
  * 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的
  */
-public class T21 {
-    private class ListNode {
+public class T21_MergeTwoSortedLinkedList {
+    private static class ListNode {
         int val;
         ListNode next;
-
         ListNode() {
         }
-
         ListNode(int val) {
             this.val = val;
         }
-
         ListNode(int val, ListNode next) {
             this.val = val;
             this.next = next;
@@ -54,5 +51,31 @@ public class T21 {
         }
         //返回新链表头结点的下一个节点
         return head.next;
+    }
+
+    public static ListNode rubbishFun(ListNode list1, ListNode list2) {
+        ListNode sentinel, temp;
+        sentinel = new ListNode(-101, null);
+        temp = sentinel;
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                temp.next = list1;
+                list1 = list1.next;
+            } else {
+                temp.next = list2;
+                list2 = list2.next;
+            }
+            temp = temp.next;
+        }
+        while (list1 != null) {
+            temp.next = list1;
+            list1 = list1.next;
+        }
+        while (list2 != null) {
+            temp.next = list2;
+            list2 = list2.next;
+        }
+
+        return sentinel.next;
     }
 }

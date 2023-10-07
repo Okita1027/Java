@@ -5,7 +5,7 @@ package algorithm.leetcode.easy;
  * @time 2023/9/21 11:01 星期四
  *
  */
-public class T160 {
+public class T160_IntersectingLinkedList {
 
     private static class ListNode {
         int val;
@@ -17,6 +17,9 @@ public class T160 {
     }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        /*
+            统计出A、B链表的长度
+         */
         ListNode pointA = headA;
         ListNode pointB = headB;
         int lengthA, lengthB;
@@ -30,6 +33,9 @@ public class T160 {
             lengthB++;
         }
 
+        /*
+            让长链表的起跑线移动至短链表的起跑线
+         */
         pointA = headA;
         pointB = headB;
         int gap = Math.abs(lengthA - lengthB);
@@ -42,6 +48,7 @@ public class T160 {
                 pointB = pointB.next;
             }
         }
+        //两链表同时移动，引用相同时就是他们的交点
         while (pointA != pointB) {
             pointA = pointA.next;
             pointB = pointB.next;

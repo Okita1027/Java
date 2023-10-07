@@ -35,7 +35,6 @@ public class T141_DetectCycle {
     private static class ListNode {
         int val;
         ListNode next;
-
         ListNode(int x) {
             val = x;
             next = null;
@@ -43,11 +42,13 @@ public class T141_DetectCycle {
     }
 
     public boolean hasCycle(ListNode head) {
+        //快慢指针
         ListNode slow, fast;
         slow = fast = head;
         while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+            slow = slow.next;       //慢指针每次移动1格
+            fast = fast.next.next;  //快指针每次移动2格
+            //2指针相遇，说明有环
             if (slow == fast) {
                 return true;
             }

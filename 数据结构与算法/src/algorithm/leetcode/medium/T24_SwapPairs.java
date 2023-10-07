@@ -19,7 +19,7 @@ package algorithm.leetcode.medium;
  * 输出：[1]
  *
  */
-public class T24 {
+public class T24_SwapPairs {
 
     private static class ListNode {
         int val;
@@ -30,14 +30,19 @@ public class T24 {
     }
 
     public ListNode swapPairs(ListNode head) {
+        //定义虚拟头结点方便后续返回链表的首个结点
         ListNode sentinel = new ListNode(-1, head);
         ListNode temp = sentinel;
+        //当接下来的2个结点都存在时才继续执行
         while (temp.next != null && temp.next.next != null) {
             ListNode leftNode = temp.next;
             ListNode rightNode = temp.next.next;
+            //让虚拟头结点的next域指向第一次两两交换后的左结点(新链表的首个元素)
             temp.next = rightNode;
+            //交换左右结点
             leftNode.next = rightNode.next;
             rightNode.next = leftNode;
+            //临时结点右移
             temp = leftNode;
         }
         return sentinel.next;

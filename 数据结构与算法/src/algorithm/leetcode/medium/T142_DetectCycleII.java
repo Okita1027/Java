@@ -31,7 +31,7 @@ package algorithm.leetcode.medium;
  * 输出：返回 null
  * 解释：链表中没有环。
  */
-public class T142_DetectCycle {
+public class T142_DetectCycleII {
     private static class ListNode {
         int val;
         ListNode next;
@@ -41,5 +41,27 @@ public class T142_DetectCycle {
             next = null;
         }
     }
-
+    public ListNode detectCycle(ListNode head) {
+        ListNode slow, fast;
+        slow = fast = head;
+        while (true) {
+            if (fast == null || fast.next == null) {
+                return null;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+            //当两指针相遇时，退出循环
+            if (slow == fast) {
+                break;
+            }
+        }
+        //快指针从头开始前进
+        fast = head;
+        //当2指针再次相遇就是环的入口
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return fast;
+    }
 }

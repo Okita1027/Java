@@ -62,9 +62,11 @@ public class T150_InversePolishExpression {
     public static int evalRPN(String[] tokens) {
         Stack<Integer> stack = new Stack<>();
         for (String letter : tokens) {
+            // 压栈数字
             if (isNumber(letter)) {
                 stack.push(Integer.parseInt(letter));
             } else {
+                //非数字->取出栈顶2个元素计算后重新压栈
                 Integer num1 = stack.pop();
                 Integer num2 = stack.pop();
                 switch (letter) {
@@ -75,9 +77,15 @@ public class T150_InversePolishExpression {
                 }
             }
         }
+        //栈中的唯一元素即为最终的结果
         return stack.pop();
     }
 
+    /**
+     * 判断字符是否为数字
+     * @param string 要判定的字符
+     * @return 是否为数字
+     */
     private static boolean isNumber(String string) {
         return !("+".equals(string) || "-".equals(string) || "*".equals(string) || "/".equals(string));
     }

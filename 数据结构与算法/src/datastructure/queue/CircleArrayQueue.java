@@ -2,6 +2,7 @@ package datastructure.queue;
 
 /**
  * @time 2022/6/4 16:09 星期六
+ * 数组模拟环形队列
  */
 public class CircleArrayQueue {
     private int front;
@@ -29,6 +30,7 @@ public class CircleArrayQueue {
             throw new RuntimeException("队列已满！");
         }
         array[rear] = element;
+        // 防止假溢出
         rear = (rear + 1) % maxSize;
     }
 
@@ -37,6 +39,7 @@ public class CircleArrayQueue {
             throw new RuntimeException("队列为空！");
         }
         int value = array[front];
+        // 防止假溢出
         front = (front + 1) % maxSize;
         return value;
     }

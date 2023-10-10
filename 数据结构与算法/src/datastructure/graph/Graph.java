@@ -1,6 +1,6 @@
 package datastructure.graph;
 
-import datastructure.queue.LinkedQueue;
+import datastructure.queue.LinkedListQueue;
 
 /**
  * @author Administrator
@@ -13,7 +13,7 @@ public class Graph {
     //边的数目
     private int E;
     //邻接表
-    private LinkedQueue<Integer>[] adj;
+    private LinkedListQueue<Integer>[] adj;
 
     public Graph(int V) {
         //初始化顶点数量
@@ -21,10 +21,10 @@ public class Graph {
         //初始化边的数量
         this.E = 0;
         //初始化邻接表
-        this.adj = new LinkedQueue[V];
+        this.adj = new LinkedListQueue[V];
         //初始化邻接表中的空队列
         for (int i = 0; i < adj.length; i++) {
-            adj[i] = new LinkedQueue<>();
+            adj[i] = new LinkedListQueue<>();
         }
     }
 
@@ -49,7 +49,7 @@ public class Graph {
     }
 
     //获取和顶点v相邻的所有顶点
-    public LinkedQueue<Integer> adj(int v) {
+    public LinkedListQueue<Integer> adj(int v) {
         return adj[v];
     }
 }

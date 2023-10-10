@@ -4,14 +4,14 @@ import java.util.Iterator;
 
 /**
  * @time 2022/6/11 21:37 星期六
- * 链队列
+ * 链式队列
  */
-public class LinkedQueue<T> implements Iterable {
+public class LinkedListQueue<T> implements Iterable {
     private int length;
     private Node<T> front;
     private Node<T> rear;
 
-    public LinkedQueue() {
+    public LinkedListQueue() {
         length = 0;
         front = rear = new Node<>(null);
     }

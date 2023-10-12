@@ -39,6 +39,7 @@ public class T641_DesignCircleDeque {
 }
 
 
+
 /*
 class MyCircularDeque {
     int[] data;
@@ -110,6 +111,7 @@ class MyCircularDeque {
         }
     }
 
+
     */
 /**
      * 复用解决循环队列中下标的越界问题
@@ -131,3 +133,4 @@ class MyCircularDeque {
     }
 }
 */
+

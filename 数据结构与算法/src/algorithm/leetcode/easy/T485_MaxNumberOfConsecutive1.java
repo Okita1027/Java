@@ -14,7 +14,7 @@ package algorithm.leetcode.easy;
  * 输入：nums = [1,0,1,1,0,1]
  * 输出：2
  */
-public class T485 {
+public class T485_MaxNumberOfConsecutive1 {
     public int findMaxConsecutiveOnes(int[] nums) {
         int[] count = new int[nums.length];
         /*
@@ -41,6 +41,6 @@ public class T485 {
 
     public static void main(String[] args) {
         int[] array = {1, 0, 1, 1, 0, 1};
-        System.out.println(new T485().findMaxConsecutiveOnes(array));
+        System.out.println(new T485_MaxNumberOfConsecutive1().findMaxConsecutiveOnes(array));
     }
 }

@@ -42,19 +42,24 @@ package algorithm.leetcode.easy;
  */
 public class T26_RemoveDuplicatesInOrderedArray {
     public int removeDuplicates(int[] nums) {
+        //左右指针从下标为0、1开始比较
+        //数组长度>=1,故不重复的元素个数>=1
         int left = 0, right = 1, count = 1;
         for (int i = 1; i < nums.length; i++) {
+            //左指针等于右指针时，移动右指针
             if (nums[left] == nums[right]) {
                 right++;
             } else {
+                //左指针和右指针的间距大于1时
+                //左指针向右移动，把右指针的值传给左指针
                 if (right - left > 1) {
                     left++;
                     nums[left] = nums[right];
-                    right++;
-                } else {
+                }  else {
+                    //两个指针相邻时，两指针同时向右移动
                     left++;
-                    right++;
                 }
+                right++;
                 count++;
             }
         }

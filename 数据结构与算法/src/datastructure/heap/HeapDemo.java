@@ -3,7 +3,7 @@ package datastructure.heap;
 /**
  * @time 2022/6/5 13:00 星期日
  */
-public class test {
+public class HeapDemo {
     public static void main(String[] args) {
         Heap<Integer> heap = new Heap<Integer>(5);
         heap.insert(1);

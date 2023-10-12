@@ -5,7 +5,7 @@ package algorithm.leetcode.medium;
  * @time 2023/10/10 18:37 星期二
  * @title 设计双端队列
  */
-public class T622_DesignDeque {
+public class T622_DesignCircleQueue {
 /*    public static void main(String[] args) {
         MyCircularQueue circularQueue = new MyCircularQueue(3); // 设置长度为 3
         circularQueue.enQueue(1);  // 返回 true
@@ -19,8 +19,7 @@ public class T622_DesignDeque {
         circularQueue.Rear();  // 返回 4
     }*/
 }
-/*
-class MyCircularQueue {
+/*class MyCircularQueue {
 
     int[] array;
     int front;

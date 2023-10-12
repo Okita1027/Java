@@ -22,45 +22,26 @@ public class T346LCR041_MovingAverageDataInStream {
 
     }
 }
-/*class MovingAverage {
+/*
+class MovingAverage {
     Queue<Integer> nums;
     int capacity;
     int sum;
     // Initialize your data structure here.
     public MovingAverage(int size) {
-        nums = new LinkedList<>();
+        nums = new ArrayDeque<>();
         capacity = size;
     }
 
     public double next(int val) {
         nums.offer(val);
         sum += val;
+        // 剔除队列中超过滑动窗口最大个数的元素
         if (nums.size() > capacity) {
             sum -= nums.poll();
         }
         return (double) sum / nums.size();
     }
 
-}*/
-
-/*class MovingAverage {
-    ArrayDeque<Integer> deque;
-    int capacity;
-    static double average;
-    // Initialize your data structure here.
-    public MovingAverage(int size) {
-        deque = new ArrayDeque<>();
-        capacity = size;
-        average = 0;
-    }
-
-    public double next(int val) {
-        deque.addFirst(val);
-        average += val;
-        if (deque.size() > capacity) {
-            average -= deque.removeLast();
-        }
-        return average / deque.size();
-    }
-
-}*/
+}
+*/

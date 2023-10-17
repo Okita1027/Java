@@ -1,11 +1,11 @@
-package datastructure.queue;
+package datastructure.queue.priority;
 
 /**
  * @author qzy
  * @time 2023/10/12 15:18 星期四
  * @title 优先级队列（堆实现）
  */
-public class PriorityQueue3<E extends Priority> implements Queue<E>  {
+public class PriorityQueue3<E extends Priority> implements Queue<E> {
     Priority[] array;
     int size;
     public PriorityQueue3(int capacity) {
@@ -20,7 +20,7 @@ public class PriorityQueue3<E extends Priority> implements Queue<E>  {
         int child = size++; // 下一个元素的位置
         int parent = (child - 1) / 2;   // 父节点计算公式
         // 比较要加入的(子）结点与父节点的优先级
-        while (child != 0 && e.priority() > array[parent].priority()) {
+        while (child != 0 && e.priority() > array[parent].priority()) { // 若想实现小顶堆，把 > 改成 < 即可，包括down方法中的>
             // 若子节点优先级比父节点高，则将父节点变成子节点
             array[child] = array[parent];
             child = parent;

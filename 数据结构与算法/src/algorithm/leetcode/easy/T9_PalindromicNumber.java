@@ -4,7 +4,7 @@ package algorithm.leetcode.easy;
  * @Date 2022/6/15 19:42 星期三
  * 回文数
  */
-public class T9 {
+public class T9_PalindromicNumber {
     public boolean isPalindrome(int x) {
         String s = String.valueOf(x);
         int mid = s.length() / 2;

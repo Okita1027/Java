@@ -1,4 +1,6 @@
-package datastructure.queue;
+package datastructure.queue.priority;
+
+import datastructure.queue.priority.Priority;
 
 /**
  * @author qzy

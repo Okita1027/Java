@@ -17,7 +17,7 @@ package algorithm.leetcode.medium;
  * 输入：head = [1,2], n = 1
  * 输出：[1]
  */
-public class T19 {
+public class T19_RemoveNodeNBackwards {
 
     private static class ListNode {
         int val;

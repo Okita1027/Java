@@ -1,4 +1,4 @@
-package algorithm.leetcode.easy;
+package algorithm.leetcode.medium;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,11 +9,11 @@ import java.util.Arrays;
  * @time 2023/10/12 8:24 星期四
  * @title 189->轮转数组
  */
-public class T189_RotateArray {
+public class T189_RotateArrayTwoSum {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4, 5, 6, 7};
         int k = 3;
-        T189_RotateArray fun = new T189_RotateArray();
+        T189_RotateArrayTwoSum fun = new T189_RotateArrayTwoSum();
         fun.rotate(nums, k);
         System.out.println("nums = " + Arrays.toString(nums));
 
@@ -129,13 +129,16 @@ public class T189_RotateArray {
         }
         int[] array = new int[nums.length];
         int i, j;
+        // 把数组末尾将要转移至数组开头的元素放到新数组中
         for (i = 0, j = nums.length - k; j < nums.length; j++) {
             array[i++] = nums[j];
         }
         j = 0;
+        // 把不需要转移的元素放入新数组
         while (i < array.length) {
             array[i++] = nums[j++];
         }
+        // 覆盖原数组的内容
         System.arraycopy(array, 0, nums, 0, array.length);
     }
 

@@ -32,7 +32,7 @@ import java.util.*;
  * -104 <= nums[i] <= 104
  * 1 <= k <= nums.length
  */
-public class MaxSlidingWindow {
+public class T239_MaxSlidingWindow {
     public int[] maxSlidingWindow(int[] nums, int k) {
         Deque<Integer> deque = new ArrayDeque<>();
         int n = nums.length;

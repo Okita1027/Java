@@ -14,7 +14,7 @@ package algorithm.leetcode.medium;
  * 输入：head = [5], left = 1, right = 1
  * 输出：[5]
  */
-public class T92 {
+public class T92_ReverseLinkedListII {
     private static class ListNode {
         int val;
         ListNode next;

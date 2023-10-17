@@ -1,5 +1,7 @@
 package datastructure.heap;
 
+import org.junit.jupiter.api.Test;
+
 /**
  * @time 2022/6/5 13:00 星期日
  */
@@ -24,5 +26,12 @@ public class HeapDemo {
             int index = queue.delMin();
             System.out.println("index = " + index);
         }
+    }
+
+    @Test
+    void MaxHeap() {
+        int[] source = {1, 2, 3, 4, 5, 6, 7};
+        MaxHeap heap = new MaxHeap(source);
+        System.out.println("heap = " + heap);
     }
 }

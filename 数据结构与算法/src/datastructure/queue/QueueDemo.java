@@ -1,5 +1,10 @@
 package datastructure.queue;
 
+import datastructure.queue.blocking.BlockingQueue1;
+import datastructure.queue.blocking.BlockingQueue2;
+import datastructure.queue.priority.Entry;
+import datastructure.queue.priority.PriorityQueue1;
+import datastructure.queue.priority.PriorityQueue2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -82,5 +87,59 @@ public class QueueDemo {
 //        System.out.println("queue.poll() = " + queue.peek().getValue());
         System.out.println("queue.poll() = " + queue.poll());
         System.out.println("queue.poll() = " + queue.poll());
+    }
+
+
+    @Test
+    void BlockingQueue1() throws InterruptedException {
+        BlockingQueue1<Integer> queue = new BlockingQueue1<>(5);
+        Thread t1 = new Thread(() -> {
+            try {
+                System.out.println("queue.poll(3000) = " + queue.poll(3000));
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+        });
+        t1.setName("线程1");
+
+        Thread t2 = new Thread(() -> {
+            try {
+                queue.offer(1);
+                queue.offer(2);
+                queue.offer(3);
+                queue.offer(4);
+                System.out.println(queue);
+                queue.offer(5, 1000);
+                System.out.println(queue);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        t2.setName("线程2");
+
+        t1.start();
+        t2.start();
+    }
+
+    @Test
+    void BlockingQueue2() throws InterruptedException{
+        BlockingQueue2<Integer> queue = new BlockingQueue2<>(5);
+        new Thread(() -> {
+            try {
+                queue.offer(1);
+                queue.offer(2);
+                queue.offer(3);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }, "offer").start();
+        new Thread(() -> {
+            try {
+                System.out.println("queue.poll() = " + queue.poll());
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }, "poll").start();
     }
 }

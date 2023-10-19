@@ -40,5 +40,9 @@ public class TreeDemo {
         System.out.println("\n=========================");
 
         tree.commonOrderLoop(root);
+
+        System.out.println("\n=========================");
+
+        tree.layerTraversal();
     }
 }

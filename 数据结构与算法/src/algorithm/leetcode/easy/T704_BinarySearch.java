@@ -17,7 +17,7 @@ package algorithm.leetcode.easy;
  * 输出: -1
  * 解释: 2 不存在 nums 中因此返回 -1
  */
-public class T704 {
+public class T704_BinarySearch {
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
         while (left <= right) {

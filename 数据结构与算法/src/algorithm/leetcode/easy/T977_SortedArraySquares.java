@@ -17,7 +17,7 @@ package algorithm.leetcode.easy;
  * 输出：[4,9,9,49,121]
  *
  */
-public class T977 {
+public class T977_SortedArraySquares {
     public int[] sortedSquares(int[] nums) {
         int[] array = new int[nums.length];
         int i = array.length - 1;

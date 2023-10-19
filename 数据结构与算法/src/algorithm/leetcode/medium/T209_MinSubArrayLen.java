@@ -1,10 +1,5 @@
 package algorithm.leetcode.medium;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * @author qzy
  * @time 2023/9/18 16:21 星期一
@@ -25,7 +20,7 @@ import java.util.List;
  * 输入：target = 11, nums = [1,1,1,1,1,1,1,1]
  * 输出：0
  */
-public class T209 {
+public class T209_MinSubArrayLen {
     public int minSubArrayLen(int target, int[] nums) {
         int sum = 0;
         int left, right;
@@ -46,7 +41,7 @@ public class T209 {
 
     public static void main(String[] args) {
         int[] ints = new int[]{2, 3, 1, 2, 4, 3};
-        int max = new T209().minSubArrayLen(7, ints);
+        int max = new T209_MinSubArrayLen().minSubArrayLen(7, ints);
         System.out.println("max = " + max);
     }
 }

@@ -20,7 +20,7 @@ package algorithm.leetcode.easy;
  * 输入: nums = [1,3,5,6], target = 7
  * 输出: 4
  */
-public class T35 {
+public class T35_SearchInsert {
     public int searchInsert(int[] nums, int target) {
         int low = 0;
         int high = nums.length - 1;
@@ -37,7 +37,7 @@ public class T35 {
     }
 
     public static void main(String[] args) {
-        T35 t35 = new T35();
-        System.out.println(t35.searchInsert(new int[]{1,3,5,6}, 5));
+        T35_SearchInsert t35SearchInsert = new T35_SearchInsert();
+        System.out.println(t35SearchInsert.searchInsert(new int[]{1,3,5,6}, 5));
     }
 }

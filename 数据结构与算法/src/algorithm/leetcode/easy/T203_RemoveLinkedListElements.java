@@ -18,7 +18,7 @@ package algorithm.leetcode.easy;
  * 输入：head = [7,7,7,7], val = 7
  * 输出：[]
  */
-public class T203 {
+public class T203_RemoveLinkedListElements {
 
     private static class ListNode {
         int val;

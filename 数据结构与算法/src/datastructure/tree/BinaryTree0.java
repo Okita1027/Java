@@ -1,5 +1,8 @@
 package datastructure.tree;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -16,6 +19,7 @@ public class BinaryTree0 {
 
     /**
      * 通用的前、中、后序遍历
+     *
      * @param node 根节点
      */
     public void commonOrderLoop(TreeNode0 node) {
@@ -47,6 +51,7 @@ public class BinaryTree0 {
 
     /**
      * 循环实现前序遍历
+     *
      * @param node 根节点
      */
     public void preOrderLoop(TreeNode0 node) {
@@ -67,8 +72,10 @@ public class BinaryTree0 {
         }
 
     }
+
     /**
      * 循环实现中序遍历
+     *
      * @param node 根节点
      */
     public void midOrderLoop(TreeNode0 node) {
@@ -85,34 +92,37 @@ public class BinaryTree0 {
             }
         }
     }
+
     /**
      * 循环实现后序遍历
+     *
      * @param node 根节点
      */
     public void postOrderLoop(TreeNode0 node) {
         TreeNode0 current = node;
         Stack<TreeNode0> stack = new Stack<>();
         TreeNode0 pop = null;
-		while (current != null || !stack.isEmpty()) {
-			if (current != null) {
+        while (current != null || !stack.isEmpty()) {
+            if (current != null) {
                 // 不断遍历左子节点直到没有
-				stack.push(current);
-				current = current.left;
-			} else {
-				TreeNode0 peek = stack.peek();
+                stack.push(current);
+                current = current.left;
+            } else {
+                TreeNode0 peek = stack.peek();
                 // 当前结点是叶子（左）节点或者上一个走过的结点的右子节点等于当前（右）结点
-				if (peek.right == null || peek.right == pop) {
-					pop = stack.pop();
-					System.out.print(pop.value + "\t");
-				} else {
-					current = peek.right;
-				}
-			}
-		}
+                if (peek.right == null || peek.right == pop) {
+                    pop = stack.pop();
+                    System.out.print(pop.value + "\t");
+                } else {
+                    current = peek.right;
+                }
+            }
+        }
     }
 
     /**
      * 递归实现前序遍历
+     *
      * @param node 根节点
      */
     public void preOrderRecursion(TreeNode0 node) {
@@ -126,6 +136,7 @@ public class BinaryTree0 {
 
     /**
      * 递归实现中序遍历
+     *
      * @param node 根节点
      */
     public void midOrderRecursion(TreeNode0 node) {
@@ -136,8 +147,10 @@ public class BinaryTree0 {
         System.out.print(node.value + "\t");
         midOrderRecursion(node.right);
     }
+
     /**
      * 递归实现后序遍历
+     *
      * @param node 根节点
      */
     public void postOrderRecursion(TreeNode0 node) {
@@ -148,7 +161,33 @@ public class BinaryTree0 {
         postOrderRecursion(node.right);
         System.out.print(node.value + "\t");
     }
+
+    /**
+     * 层序遍历
+     */
+    public void layerTraversal() {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode0> queue = new ArrayDeque<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode0 poll = queue.poll();
+                System.out.print(poll.value + "\t");
+                if (poll.left != null) {
+                    queue.offer(poll.left);
+                }
+                if (poll.right != null) {
+                    queue.offer(poll.right);
+                }
+            }
+            System.out.println();
+        }
+    }
 }
+
 class TreeNode0 {
     int value;
     TreeNode0 left;

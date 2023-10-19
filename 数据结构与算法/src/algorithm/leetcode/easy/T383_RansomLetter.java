@@ -22,7 +22,7 @@ package algorithm.leetcode.easy;
  *  输出：true
  *
  */
-public class T383 {
+public class T383_RansomLetter {
     public boolean canConstruct(String ransomNote, String magazine) {
         if (ransomNote.length() > magazine.length()) {
             return false;

@@ -193,6 +193,10 @@ class TreeNode0 {
     TreeNode0 left;
     TreeNode0 right;
 
+    public TreeNode0(int value) {
+        this.value = value;
+    }
+
     public TreeNode0(int value, TreeNode0 left, TreeNode0 right) {
         this.value = value;
         this.left = left;

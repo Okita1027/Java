@@ -45,4 +45,32 @@ public class TreeDemo {
 
         tree.layerTraversal();
     }
+
+    @Test
+    void BST() {
+        BinarySearchTree<Integer, Integer> bst = new BinarySearchTree<>();
+        bst.put(2,2);
+        bst.put(3,3);
+        bst.put(4,4);
+        bst.put(1,1);
+        bst.put(0,0);
+        bst.preOrder(bst.getRoot());
+        System.out.println();
+        bst.inOrder(bst.getRoot());
+        System.out.println();
+        bst.postOrder(bst.getRoot());
+
+        System.out.println();
+        bst.delete(2);
+        bst.inOrder(bst.getRoot());
+    }
+
+    @Test
+    void fun() {
+        TreeNode0 root = new TreeNode0(8);
+        root.left = new TreeNode0(5, new TreeNode0(1), new TreeNode0(7, new TreeNode0(6), null));
+        root.right = new TreeNode0(10, null, new TreeNode0(12));
+        BinaryTree0 tree = new BinaryTree0(root);
+        tree.preOrderRecursion(root);
+    }
 }

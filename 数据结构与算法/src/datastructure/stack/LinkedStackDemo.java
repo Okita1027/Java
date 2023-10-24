@@ -2,7 +2,7 @@ package datastructure.stack;
 
 /**
  * @time 2022/5/28 20:02 星期六
- * 链栈
+ * 链栈（带头结点）
  */
 public class LinkedStackDemo {
     public static void main(String[] args) {
@@ -28,6 +28,9 @@ public class LinkedStackDemo {
 }
 
 class LinkedStack {
+    /**
+     * 头结点
+     */
     private final Node<Integer> head = new Node<>(0);
 
     public Node<Integer> getHead() {
@@ -95,8 +98,8 @@ class LinkedStack {
 
 class Node<T> {
     protected T data;
-    protected Node next;
-    protected Node prior;
+    protected Node<T> next;
+    protected Node<T> prior;
 
     public Node(T data) {
         this.data = data;

@@ -33,7 +33,6 @@ public class CalculatorGUI extends JFrame {
 
         btn2.addActionListener(e -> {
             if (e.getSource() == btn2) {
-                System.out.println("btn2");
                 Random random = new Random();
                 left.setText(String.valueOf(random.nextInt(100)));
                 right.setText(String.valueOf(random.nextInt(100)));

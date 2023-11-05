@@ -79,18 +79,18 @@ public class SymbolTable<Key extends Comparable<Key>, Value> {
             temp = temp.next;
         }
     }
-}
+    static class Node<Key, Value>
+    {
+        public Key key;
+        public Value value;
+        public Node<Key, Value> next;
 
-class Node<Key, Value>
-{
-    public Key key;
-    public Value value;
-    public Node<Key, Value> next;
+        public Node(Key key, Value value, Node next) {
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
 
-    public Node(Key key, Value value, Node next) {
-        this.key = key;
-        this.value = value;
-        this.next = next;
     }
 
 }

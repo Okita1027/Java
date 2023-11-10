@@ -21,7 +21,7 @@ public class T15_ThreeSum {
         Arrays.sort(nums);
         List<List<Integer>> res = new ArrayList<>();
         for (int k = 0; k < nums.length - 2; k++) {
-            // 因为 nums[right] >= nums[left] >= nums[k] > 0，即 333 个元素都大于 000 ，在此固定指针 k 之后不可能再找到结果了。
+            // 因为 nums[right] >= nums[left] >= nums[k] > 0，即 3 个元素都大于 0 ，在此固定指针 k 之后不可能再找到结果了。
             if (nums[k] > 0)
                 break;
             // 已经将 nums[k - 1] 的所有组合加入到结果中，本次双指针搜索只会得到重复组合。

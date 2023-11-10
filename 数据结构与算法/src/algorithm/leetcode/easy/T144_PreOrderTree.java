@@ -32,9 +32,11 @@ public class T144_PreOrderTree {
 
     private void preOrder(TreeNode node, List<Integer> list) {
         TreeNode current = node;
+        // 用栈记录来的路线，便于后续进行回溯
         Stack<TreeNode> stack = new Stack<>();
         while (current != null || !stack.isEmpty()) {
             if (current != null) {
+                // 前序遍历（根、左、右）
                 list.add(current.val);
                 stack.push(current);
                 current = current.left;

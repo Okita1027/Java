@@ -21,9 +21,9 @@ public class T49_AlphabeticGrouping {
             最后，values() 方法将分组的结果以列表形式返回，并使用 ArrayList 构造函数将其封装为 List<List<String>> 类型。
          */
         return new ArrayList<>(Arrays.stream(strs)
+                // 按照排好序的字符串的分组
                 .collect(Collectors.groupingBy(str -> {
-                    // 返回 str 排序后的结果。
-                    // 按排序后的结果来grouping by，算子类似于 sql 里的 group by。
+                    /* 对单个字符串排序 */
                     char[] array = str.toCharArray();
                     Arrays.sort(array);
                     return new String(array);

@@ -20,7 +20,7 @@ public class T98_IsValidBST {
         root = new TreeNode(3, new TreeNode(1, new TreeNode(0), new TreeNode(2)), new TreeNode(5, new TreeNode(4), new TreeNode(6)));
         System.out.println(new T98_IsValidBST().isValidBST(root));
     }
-    public boolean isValidBST(TreeNode root) {
+/*    public boolean isValidBST(TreeNode root) {
         return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
@@ -32,10 +32,10 @@ public class T98_IsValidBST {
             return false;
         }
         return isValidBST(node.left, lower, node.val) && isValidBST(node.right, node.val, upper);
-    }
+    }*/
 
 
-/*    public boolean isValidBST(TreeNode root) {
+    public boolean isValidBST(TreeNode root) {
         // 中序遍历（元素从小到大）放到集合中
         ArrayList<Integer> list = new ArrayList<>();
         inOrder(root,list);
@@ -48,11 +48,11 @@ public class T98_IsValidBST {
         return true;
     }
 
-    *//**
+    /**
      * 中序遍历
      * @param root 根节点
      * @param list 遍历的结果
-     *//*
+     */
     private void inOrder(TreeNode root, ArrayList<Integer> list) {
         if (root == null) {
             return;
@@ -60,5 +60,5 @@ public class T98_IsValidBST {
         inOrder(root.left, list);
         list.add(root.val);
         inOrder(root.right, list);
-    }*/
+    }
 }

@@ -27,6 +27,7 @@ public class T383_RansomLetter {
         if (ransomNote.length() > magazine.length()) {
             return false;
         }
+        // 数组充当哈希表
         int[] ch = new int[26];
         for (char c : magazine.toCharArray()) {
             ch[c - 'a']++;

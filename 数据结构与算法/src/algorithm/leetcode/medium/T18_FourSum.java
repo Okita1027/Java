@@ -11,9 +11,7 @@ import java.util.List;
  */
 public class T18_FourSum {
     public List<List<Integer>> fourSum(int[] nums, int target) {
-        // 存储结果的列表
         List<List<Integer>> quadruplets = new ArrayList<List<Integer>>();
-
         if (nums == null || nums.length < 4) {
             return quadruplets;  // 数组长度小于4，直接返回空列表
         }

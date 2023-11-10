@@ -9,6 +9,7 @@ public class T344_ReverseString {
     public void reverseString(char[] s) {
         int left = 0;
         int right = s.length - 1;
+        // 交换首尾元素直到双指针相等
         while (left < s.length / 2) {
             char temp = s[left];
             s[left] = s[right];

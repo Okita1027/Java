@@ -36,12 +36,15 @@ public class T151_ReverseWords {
 
     // 内置函数
     public String reverseWords(String s) {
+        // 把句子划分成单词
         String[] split = s.split("\\s+");
         StringBuilder stringBuffer = new StringBuilder();
+        // 反向添加单词
         for (int i = split.length - 1; i >= 0; i--) {
             if (!split[i].isEmpty())
                 stringBuffer.append(split[i]).append(" ");
         }
+        // 移除末尾空格
         stringBuffer.deleteCharAt(stringBuffer.length() - 1);
         return String.valueOf(stringBuffer);
     }

@@ -86,7 +86,7 @@ public class DynamicArray implements Iterable<Integer> {
 
     /**
      * 遍历方式2->迭代器
-     * @return
+     * @return Iterator
      */
     @Override
     public Iterator<Integer> iterator() {
@@ -106,7 +106,7 @@ public class DynamicArray implements Iterable<Integer> {
 
     /**
      * 遍历方式3->流
-     * @return
+     * @return Stream
      */
     public IntStream intStream() {
         return IntStream.of(Arrays.copyOfRange(array, 0, size));    //包含0，不包含size

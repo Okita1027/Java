@@ -30,12 +30,15 @@ public class T94_MidOrderTree {
 
     private void midOrder(TreeNode root, List<Integer> list) {
         TreeNode current = root;
+        // 用栈记录过来的路线，方便晚点进行回溯
         Stack<TreeNode> stack = new Stack<>();
         while (current != null || !stack.isEmpty()) {
             if (current != null) {
+                // 中序遍历(左、根、右)->优先向左子树遍历
                 stack.push(current);
                 current = current.left;
             } else {
+                // 左子树已经空了，可以开始回溯
                 TreeNode pop = stack.pop();
                 list.add(pop.val);
                 current = pop.right;

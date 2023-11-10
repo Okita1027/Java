@@ -24,7 +24,6 @@ public class T14_LongestCommonPrefix {
             return strs[0];
         }
 
-        // 初始化最长公共前缀的长度为0
         int longestCommonPrefix = 0;
         char ch;
         int i = 0;
@@ -45,12 +44,9 @@ public class T14_LongestCommonPrefix {
                     return strs[0].substring(0, longestCommonPrefix);
                 }
             }
-
             // 继续遍历下一个字符
             i++;
         }
-
-        // 返回最长公共前缀
         return strs[0].substring(0, longestCommonPrefix);
     }
 

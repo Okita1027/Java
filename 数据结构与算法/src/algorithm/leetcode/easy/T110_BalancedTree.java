@@ -17,18 +17,21 @@ public class T110_BalancedTree {
         if (root == null) {
             return 0;
         }
+        // 计算左子树的高度
         int left = depth(root.left);
         if (left == -1) {
             return -1;
         }
+        // 计算右子树的高度
         int right = depth(root.right);
         if (right == -1) {
             return -1;
         }
+        // 若2边的差值大于1了，则认为不平衡
         if (Math.abs(left - right) > 1) {
             return -1;
         }
+        // 返回当前这一颗小子树中更高的值
         return Math.max(left, right) + 1;
-
     }
 }

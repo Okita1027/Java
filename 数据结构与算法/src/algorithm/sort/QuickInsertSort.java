@@ -4,21 +4,15 @@ import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * @time 2022年5月11日11:12:55
- * 快速排序：与归并排序一样基于分治思想，是冒泡排序的改进版本
- * 1.首先设定一个分界值，通过该分界值将数组分成左右两部分；
- * 2.将大于或等于分界值的数据放到到数组右边，小于分界值的数据放到数组的左边。此时左边部分中各元素都小于
- * 或等于分界值，而右边部分中各元素都大于或等于分界值；
- * 3.然后，左边和右边的数据可以独立排序。对于左侧的数组数据，又可以取一个分界值，将该部分数据分成左右两
- * 部分，同样在左边放置较小值，右边放置较大值。右侧的数组数据也可以做类似处理。
- * 4.重复上述过程，可以看出，这是一个递归定义。通过递归将左侧部分排好序后，再递归排好右侧部分的顺序。当
- * 左侧和右侧两个部分的数据排完序后，整个数组的排序也就完成了。
+ * @author qzy
+ * @time 2023/11/7 14:19 星期二
+ * @title 快排+插入
  */
-public class QuickSort {
+public class QuickInsertSort {
     public static void main(String[] args) {
         Integer[] ints = {3, 6, 1, 8, 4, 7, 0, 5, 2, 9};
         quickSort(ints);
-        Arrays.stream(ints).forEach(System.out::println);
+        Arrays.stream(ints).forEach(System.out::print);
     }
 
     public static boolean less(Comparable a, Comparable b) {
@@ -38,7 +32,9 @@ public class QuickSort {
     }
 
     private static void quickSort(Comparable array[], int low, int high) {
-        if (high <= low) {
+        // 剩余元素不足32个时，使用直接插入排序
+        if (high - low <= 32) {
+            insertion(array, low, high);
             return;
         }
         //找出用于切分的下标
@@ -87,5 +83,19 @@ public class QuickSort {
         exchange(array, low, right);
         //返回分界值
         return right;
+    }
+
+    private static void insertion(Comparable[] a, int left, int right) {
+        for (int low = left + 1; low <= right; low++) {
+            Comparable t = a[low];
+            int i = low - 1;
+            while (i >= left && less(t, a[i])) {
+                a[i + 1] = a[i];
+                i--;
+            }
+            if (i != low - 1) {
+                a[i + 1] = t;
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@ import java.util.HashMap;
 public class T454_FourSumCount {
     public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
         int count = 0;  // 记录满足条件的元组个数
-        int length = nums1.length;  // 数组的长度，假设四个数组的长度都相同
+        int length = nums1.length;  // 四个数组的长度都相同
         HashMap<Integer, Integer> map = new HashMap<>();  // 存储两数组合的和以及出现次数的哈希表
 
         // 遍历nums1和nums2数组，计算所有可能的两数之和并存储到哈希表中

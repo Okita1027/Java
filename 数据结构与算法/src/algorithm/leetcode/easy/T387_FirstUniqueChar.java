@@ -15,9 +15,12 @@ public class T387_FirstUniqueChar {
     }
     public int firstUniqueChar(String str) {
         HashMap<Character, Boolean> map = new HashMap<>();
+        // 遍历字符串
         for (int i = 0; i < str.length(); i++) {
+            // 若不包含当前字符，则以字符为键，将值置为true; 否则false
             map.put(str.charAt(i), !map.containsKey(str.charAt(i)));
         }
+        // 遍历哈希表，找到第一个值为true的
         for (int i = 0; i < str.length(); i++) {
             if (map.get(str.charAt(i))) {
                 return i;

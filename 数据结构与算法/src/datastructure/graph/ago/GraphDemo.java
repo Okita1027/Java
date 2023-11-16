@@ -1,9 +1,9 @@
-package datastructure.graph;
+package datastructure.graph.ago;
 
 /**
  * @Date 2022/6/12 14:37 星期日
  */
-public class GraphTest {
+public class GraphDemo {
     public static void main(String[] args) {
         Graph graph = new Graph(5);
         graph.addEdge(1,2);

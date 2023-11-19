@@ -73,4 +73,10 @@ public class TreeDemo {
         BinaryTree0 tree = new BinaryTree0(root);
         tree.preOrderRecursion(root);
     }
+
+    @Test
+    void HuffmanTree() {
+        HuffmanTree tree = new HuffmanTree("abcccccccc");
+        System.out.println("tree = " + tree);
+    }
 }

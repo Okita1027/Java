@@ -1,4 +1,4 @@
-package juc.senior;
+package juc.basic;
 
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;

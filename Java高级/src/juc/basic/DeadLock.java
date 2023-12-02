@@ -18,47 +18,48 @@ public class DeadLock
     public static void main(String[] args)
     {
         //模拟死锁的情况
-        lock A = new lock(true);
-        lock B = new lock(false);
+        Lock A = new Lock(true);
+        Lock B = new Lock(false);
         A.start();
         B.start();
     }
-}
 
-class lock extends Thread
-{
-    //lock继承Thread，这里使用static是为了保证多线程使用的是同一个对象
-    static Object A = new Object();
-    static Object B = new Object();
-    boolean flag;
-
-    public lock(boolean flag)
+    static class Lock extends Thread
     {
-        this.flag = flag;
-    }
+        //lock继承Thread，这里使用static是为了保证多线程使用的是同一个对象
+        static Object A = new Object();
+        static Object B = new Object();
+        boolean flag;
 
-    @Override
-    public void run()
-    {
-        if (flag)
+        public Lock(boolean flag)
         {
-            synchronized (A)
-            {
-                System.out.println("AAA，线程名：" + Thread.currentThread().getName());
-                synchronized (B)
-                {
-                    System.out.println("BBB，线程名：" + Thread.currentThread().getName());
-                }
-            }
+            this.flag = flag;
         }
-        else
-            synchronized (B)
+
+        @Override
+        public void run()
+        {
+            if (flag)
             {
-                System.out.println("BBB" + Thread.currentThread().getName());
                 synchronized (A)
                 {
-                    System.out.println("AAA" + Thread.currentThread().getName());
+                    System.out.println("AAA，线程名：" + Thread.currentThread().getName());
+                    synchronized (B)
+                    {
+                        System.out.println("BBB，线程名：" + Thread.currentThread().getName());
+                    }
                 }
             }
+            else
+                synchronized (B)
+                {
+                    System.out.println("BBB" + Thread.currentThread().getName());
+                    synchronized (A)
+                    {
+                        System.out.println("AAA" + Thread.currentThread().getName());
+                    }
+                }
+        }
     }
 }
+

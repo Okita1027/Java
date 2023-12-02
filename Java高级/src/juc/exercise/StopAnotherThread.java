@@ -1,4 +1,4 @@
-package juc.senior;
+package juc.exercise;
 
 import java.util.logging.Logger;
 
@@ -19,10 +19,8 @@ public class StopAnotherThread {
         Thread.sleep(3500);
         termination.stop();
     }
-    static class TwoPhaseTermination{
-
+    static class TwoPhaseTermination {
         private Thread monitor;
-
         //启动监控线程
         public void start() {
             monitor = new Thread(() -> {

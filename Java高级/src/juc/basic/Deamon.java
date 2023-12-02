@@ -15,7 +15,7 @@ public class Deamon
     * */
     public static void main(String[] args) throws InterruptedException
     {
-        work work = new work();
+        Work work = new Work();
         //如果我们希望在main线程结束之后work线程也随之结束
         //就用这条setDaemon方法，注意这条语句需要写在start方法之前，否则会出现异常
         work.setDaemon(true);
@@ -26,23 +26,22 @@ public class Deamon
             Thread.sleep(1000);
         }
     }
-}
-
-class work extends Thread
-{
-    @Override
-    public void run()
+    static class Work extends Thread
     {
-        while (true)
+        @Override
+        public void run()
         {
-            try
+            while (true)
             {
-                System.out.println("子线程运行中...");
-                Thread.sleep(1000);
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
+                try
+                {
+                    System.out.println("子线程运行中...");
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
             }
         }
     }

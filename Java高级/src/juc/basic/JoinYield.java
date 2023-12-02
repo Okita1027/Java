@@ -24,24 +24,23 @@ public class JoinYield
             }
         }
     }
-}
-
-class NetBar extends Thread
-{
-    @Override
-    public void run()
+    static class NetBar extends Thread
     {
-        for (int i = 0; i < 20; i++)
+        @Override
+        public void run()
         {
-            try
+            for (int i = 0; i < 20; i++)
             {
-                Thread.sleep(1000);
+                try
+                {
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                System.out.println("子线程（===大哥===）上" + i + "号机子");
             }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-            }
-            System.out.println("子线程（===大哥===）上" + i + "号机子");
         }
     }
 }

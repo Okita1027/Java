@@ -16,32 +16,31 @@ public class ThreadExit
         Thread.sleep(10000);
         thread01.setFlag(false);
     }
-}
-
-class thread01 extends Thread
-{
-    private boolean flag = true;
-
-    @Override
-    public void run()
+    static class thread01 extends Thread
     {
-        int count = 0;
-        while (flag)
+        private boolean flag = true;
+
+        @Override
+        public void run()
         {
-            System.out.println("次数" + (++count) + "： thread01运行中! 当前线程名：" + Thread.currentThread().getName());
-            try
+            int count = 0;
+            while (flag)
             {
-                Thread.sleep(1000);
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
+                System.out.println("次数" + (++count) + "： thread01运行中! 当前线程名：" + Thread.currentThread().getName());
+                try
+                {
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
             }
         }
-    }
 
-    public void setFlag(boolean flag)
-    {
-        this.flag = flag;
+        public void setFlag(boolean flag)
+        {
+            this.flag = flag;
+        }
     }
 }

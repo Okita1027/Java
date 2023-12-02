@@ -1,4 +1,6 @@
-package juc.senior;
+package juc.exercise;
+
+import juc.api.GlobalLogger;
 
 import java.util.logging.Logger;
 
@@ -28,6 +30,7 @@ public class TwoThreadExec01 {
                 log.info("拿茶叶");
                 Thread.sleep(1);
                 log.info("洗茶杯");
+                Thread.sleep(2);
                 //等小明那边的水烧开再泡茶
                 t1.join();
                 log.info("泡茶");

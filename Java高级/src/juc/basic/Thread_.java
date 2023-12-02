@@ -23,7 +23,7 @@ public class Thread_
      */
     public static void main(String[] args) throws InterruptedException
     {
-        game game = new game();
+        Game game = new Game();
         //用start而不是run，因为直接用run，那就是主线程main调用一个普通的方法执行而已
         //它会把run方法执行完后再执行main方法中后续的内容，这样就不算多线程了
         /* start方法底层调用了一个start0方法，start0是真正运行的线程的方法
@@ -41,30 +41,31 @@ public class Thread_
             Thread.sleep(1000);
         }
     }
-}
-//当一个类继承了Thread类，它就可以当做一个线程使用
-class game extends Thread
-{
-    //重写run方法即描述此线程要做什么事情
-    @Override
-    public void run()
+    //当一个类继承了Thread类，它就可以当做一个线程使用
+    static class Game extends Thread
     {
-        int count = 0;
-        while (true)
+        //重写run方法即描述此线程要做什么事情
+        @Override
+        public void run()
         {
-            System.out.println("次数" + (++count) + "： Game Start! 当前线程名：" + Thread.currentThread().getName());
-            //sleep方法有异常，用try-catch包裹起来
-            try
+            int count = 0;
+            while (true)
             {
-                //sleep方法：让这个线程间隔一秒再运行
-                Thread.sleep(1000);
+                System.out.println("次数" + (++count) + "： Game Start! 当前线程名：" + Thread.currentThread().getName());
+                //sleep方法有异常，用try-catch包裹起来
+                try
+                {
+                    //sleep方法：让这个线程间隔一秒再运行
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                if (count == 80)    //此线程一共要执行80次
+                    break;
             }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-            }
-            if (count == 80)    //此线程一共要执行80次
-                break;
         }
     }
+
 }

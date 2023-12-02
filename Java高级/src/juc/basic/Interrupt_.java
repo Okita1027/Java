@@ -6,7 +6,7 @@ package juc.basic;
  * @Date 2021年8月23日19:23:20
  */
 @SuppressWarnings({"all"})
-public class interrupt_
+public class Interrupt_
 {
     public static void main(String[] args) throws InterruptedException
     {
@@ -31,39 +31,40 @@ public class interrupt_
         //这条语句相当于取消了它的休眠状态，让他在主线程输出25次循环后，立即开始执行线程的内容
         wallpaper.interrupt();
     }
-}
 
-class wallpaper extends Thread
-{
-    @Override
-    public void run()
+    static class wallpaper extends Thread
     {
-        while (true)
+        @Override
+        public void run()
         {
-            for (int i = 0; i < 20; i++)
+            while (true)
             {
-                System.out.print("切换壁纸" + i);
-                System.out.println(",线程名：" + Thread.currentThread().getName());
+                for (int i = 0; i < 20; i++)
+                {
+                    System.out.print("切换壁纸" + i);
+                    System.out.println(",线程名：" + Thread.currentThread().getName());
+                    try
+                    {
+                        Thread.sleep(500);
+                    }
+                    catch (InterruptedException e)
+                    {
+                        System.out.println("线程中断！");
+                        e.printStackTrace();
+                    }
+                }
                 try
                 {
-                    Thread.sleep(500);
+                    //让这个线程过10秒再运行
+                    System.out.println(Thread.currentThread().getName() + "正在休眠……");
+                    Thread.sleep(10000);
                 }
                 catch (InterruptedException e)
                 {
-                    System.out.println("线程中断！");
-                    e.printStackTrace();
+                    System.out.println(Thread.currentThread().getName() + "被interrupt（中断）了");
                 }
-            }
-            try
-            {
-                //让这个线程过10秒再运行
-                System.out.println(Thread.currentThread().getName() + "正在休眠……");
-                Thread.sleep(10000);
-            }
-            catch (InterruptedException e)
-            {
-                System.out.println(Thread.currentThread().getName() + "被interrupt（中断）了");
             }
         }
     }
 }
+

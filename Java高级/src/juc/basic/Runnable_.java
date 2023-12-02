@@ -16,35 +16,36 @@ public class Runnable_
     * */
     public static void main(String[] args)
     {
-        cartoon cartoon = new cartoon();
+        Cartoon cartoon = new Cartoon();
         //由于cartoon实现的Runnable接口没有start方法，所以要换种方式实现多线程
         //创建Thread对象，由于cartoon实现了Runnable接口，而Thread也是实现Runnable接口的，所以括号内可以填cartoon
         Thread thread = new Thread(cartoon);
         thread.start();
     }
-}
-class cartoon implements Runnable
-{
-    //重写run方法即描述此线程要做什么事情
-    @Override
-    public void run()
+
+    static class Cartoon implements Runnable
     {
-        int count = 0;
-        while (true)
+        //重写run方法即描述此线程要做什么事情
+        @Override
+        public void run()
         {
-            System.out.println("次数" + (++count) + "： Cartoon Start! 当前线程名：" + Thread.currentThread().getName());
-            //sleep方法有异常，用try-catch包裹起来
-            try
+            int count = 0;
+            while (true)
             {
-                //sleep方法：让这个线程间隔一秒再运行
-                Thread.sleep(1000);
+                System.out.println("次数" + (++count) + "： Cartoon Start! 当前线程名：" + Thread.currentThread().getName());
+                //sleep方法有异常，用try-catch包裹起来
+                try
+                {
+                    //sleep方法：让这个线程间隔一秒再运行
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                if (count == 80)    //此线程一共要执行80次
+                    break;
             }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-            }
-            if (count == 80)    //此线程一共要执行80次
-                break;
         }
     }
 }

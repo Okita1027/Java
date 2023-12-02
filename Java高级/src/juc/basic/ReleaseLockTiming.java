@@ -5,7 +5,7 @@ package juc.basic;
  * @Title 锁的释放条件
  * @Date 2021年8月25日14:17:06
  */
-public class Release
+public class ReleaseLockTiming
 {
     public static void main(String[] args)
     {

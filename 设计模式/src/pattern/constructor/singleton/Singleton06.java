@@ -21,7 +21,7 @@ public class Singleton06
 class Wife2
 {
     private String name;
-    //添加volatile关键字（涉及并发编程的知识），能进一步提高效率
+    //添加volatile关键字（涉及并发编程的知识），能防止指令重排序带来的问题
     private static volatile Wife2 wife2;
     private Wife2(String name)
     {

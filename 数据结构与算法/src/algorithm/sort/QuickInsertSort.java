@@ -85,17 +85,28 @@ public class QuickInsertSort {
         return right;
     }
 
+    /**
+     * 使用插入排序对数组的指定范围进行排序
+     * @param a 待排序的数组
+     * @param left 排序范围的左边界（包含）
+     * @param right 排序范围的右边界（包含）
+     */
     private static void insertion(Comparable[] a, int left, int right) {
+        // 从数组的第二个元素开始，依次将元素插入已排序部分
         for (int low = left + 1; low <= right; low++) {
-            Comparable t = a[low];
-            int i = low - 1;
+            Comparable t = a[low]; // 保存当前待插入的元素
+            int i = low - 1; // 初始化已排序部分的最后一个元素的索引
+            // 将当前元素与已排序部分进行比较并插入到合适位置
             while (i >= left && less(t, a[i])) {
-                a[i + 1] = a[i];
-                i--;
+                a[i + 1] = a[i]; // 将大于待插入元素的元素后移一位
+                i--; // 继续向前搜索合适的插入位置
             }
+            // 将待插入元素插入到合适位置
             if (i != low - 1) {
                 a[i + 1] = t;
             }
         }
     }
+
+
 }

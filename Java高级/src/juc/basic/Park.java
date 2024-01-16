@@ -1,5 +1,7 @@
 package juc.basic;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +31,14 @@ public class Park {
         Thread.sleep(1);
         t1.interrupt();
 
+        Thread parkThread = new Thread(() -> {
+            LockSupport.park();
+        }, "park");
+        parkThread.start();
+        LockSupport.unpark(parkThread);
+
         Thread.sleep(1000);
-        System.exit(1);
+
     }
+
 }
